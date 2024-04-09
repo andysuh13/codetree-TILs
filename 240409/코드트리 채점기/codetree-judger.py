@@ -112,9 +112,10 @@ for _ in range(Q - 1):
                 continue
             else:
                 (start, u, J) = judging_task
+                history_queue.append((start, t, u, J))
                 break
         judging_queue.remove(judging_task)
-        history_queue.append((start, t, u, J_id))
+        
         # print(f'history_queue: {history_queue}')
 
         # 채점기 다시 쉬는 상태
