@@ -111,9 +111,9 @@ for _ in range(Q - 1):
             if J_id != judging_task[2]:
                 continue
             else:
-                (start, u, J) = juding_queue.popleft()
-                history_queue.append((start, t, u, J))
-        
+                (start, u, J) = judging_task
+                break
+        judging_queue.remove(judging_task)
         history_queue.append((start, t, u, J_id))
         # print(f'history_queue: {history_queue}')
 
