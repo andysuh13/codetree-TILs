@@ -99,12 +99,25 @@ for _ in range(Q - 1):
 
     ### 채점 종료 ### (O)
     elif lst[0] == 400: # lst : 400, t, J_id : 400, 4, 1
-        # 채점 진행 큐에서 채점 완료 큐로 데이터 이동
-        (start, u, J_id) = judging_queue.popleft()
-        history_queue.append((start, int(lst[1]), u, J_id))
+        t = int(lst[1])
+        J_id = int(lst[2])
+
+        # 채점 중인 task가 없다면, 요청 무시하고 넘어감.
+        if not judging_queue:
+            continue
+
+        # J_id번 채점기가 진행하고 있는 채점이 없다면 요청 무시하고 넘어가고, 있다면 채점 완료 처리.
+        for judging_task in judging_queue:
+            if J_id != judging_task[2]:
+                continue
+            else:
+                (start, u, J) = juding_queue.popleft()
+                history_queue.append((start, t u, J))
+        
+        history_queue.append((start, t, u, J_id))
         # print(f'history_queue: {history_queue}')
 
-        # 채점기 해제
+        # 채점기 다시 쉬는 상태
         waiting_judger.insert(J_id-1, J_id)
 
     ### 채점 대기 큐 조회 ### (O)
