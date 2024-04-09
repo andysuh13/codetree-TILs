@@ -112,7 +112,7 @@ for _ in range(Q - 1):
                 continue
             else:
                 (start, u, J) = juding_queue.popleft()
-                history_queue.append((start, t u, J))
+                history_queue.append((start, t, u, J))
         
         history_queue.append((start, t, u, J_id))
         # print(f'history_queue: {history_queue}')
