@@ -170,7 +170,6 @@ for _ in range(Q):
                 break
         if check == False:
             continue
-        
         heapq.heappush(waiting_queue, (p, t, u))
         continue
 
@@ -184,13 +183,13 @@ for _ in range(Q):
 
         else:
             # waiting queue 정렬
-            h = []
-            sorted_waiting_queue = []
-            for task in waiting_queue:
-                heapq.heappush(h, task)
-            for _ in range(len(h)):
-                sorted_waiting_queue.append(heapq.heappop(h))
-            waiting_queue = sorted_waiting_queue
+            # h = []
+            # sorted_waiting_queue = []
+            # for task in waiting_queue:
+            #     heapq.heappush(h, task)
+            # for _ in range(len(h)):
+            #     sorted_waiting_queue.append(heapq.heappop(h))
+            # waiting_queue = sorted_waiting_queue
 
             # waiting queue 정렬 후 차례대로 채점 불가능 체크
             # 채점 불가능하면 다음 task 확인.
