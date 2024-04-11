@@ -22,7 +22,7 @@ for (i, (id, w)) in enumerate(zip(id_lst, w_lst)):
     belt_lst[belt_num].append((id, w))
 
 for _ in range(q - 1):
-    temp = list(map(int, intput().split()))
+    temp = list(map(int, input().split()))
     cmd_num = temp[0]
     target = temp[1]
     
