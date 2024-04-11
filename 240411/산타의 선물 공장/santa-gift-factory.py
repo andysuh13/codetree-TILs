@@ -31,10 +31,11 @@ for _ in range(q - 1):
     # 1번 벨트부터 m번 벨트까지 순서대로 벨트를 보며 각 벨트의 맨 앞에 있는 선물 중 해당 선물의 무게가 w_max이하라면 하차 진행.
     if cmd_num == 200:
         for belt in belt_lst:
-            if belt[0][1] <= target:
-                result += belt.popleft()[1]
-            else:
-                pass
+            if belt:
+                if belt[0][1] <= target:
+                    result += belt.popleft()[1]
+                else:
+                    pass
         print(result)
         continue
 
