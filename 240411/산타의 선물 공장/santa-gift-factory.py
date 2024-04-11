@@ -25,14 +25,15 @@ for _ in range(q - 1):
     temp = list(map(int, input().split()))
     cmd_num = temp[0]
     target = temp[1]
-    result = 0
-
+    
     # 물건 하차 : 200 w_max : 하차된 상자 무게의 총합을 출력해야 함.
     # 1번 벨트부터 m번 벨트까지 순서대로 벨트를 보며 각 벨트의 맨 앞에 있는 선물 중 해당 선물의 무게가 w_max이하라면 하차 진행.
     if cmd_num == 200:
+        w_max = target
+        result = 0
         for belt in belt_lst:
             if belt:
-                if belt[0][1] <= target:
+                if belt[0][1] <= w_max:
                     result += belt.popleft()[1]
                 else:
                     pass
