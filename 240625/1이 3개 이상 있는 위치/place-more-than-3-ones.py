@@ -15,7 +15,6 @@ for i in range(n):
             nc = j + dc[k]
             if nr < 0 or nr > 3 or nc < 0 or nc > 3:
                 continue
-
             if maps[nr][nc] == 1:
                 cnt += 1
         if cnt >= 3:
