@@ -1,15 +1,11 @@
 n = int(input())
-lst = list(map(int, input().split()))
+arr = list(map(int, input().split()))
 
 cnt = 0
 
 for i in range(n):
-    result = []
-    result.append(lst[i])
     for j in range(i + 1, n):
-        if (result[-1] <= lst[j]) & (len(result) < 3):
-            result.append(lst[j])
-        if len(result) == 3:
-            cnt += 1
-            break
+        for k in range(j + 1, n):
+            if arr[i] <= arr[j] and arr[j] <= arr[k]:
+                cnt += 1
 print(cnt)
